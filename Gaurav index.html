@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav Sharma - Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+      font-weight: 600;
+      color: #0078ff !important;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #0078ff, #00d4ff);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* About Section */
+    .about {
+      background-color: #ecf3f4;
+      padding: 100px 0;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 50%;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    
+    }
+
+    .skill-tag {
+      background: #0078ff;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin: 4px;
+      display: inline-block;
+    }
+
+    /* Projects */
+    .projects {
+      padding: 100px 0;
+    
+    }
+
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 120, 255, 0.3);
+      background: linear-gradient(135deg, #4a90e2, #14c9d2);
+    }
+
+    .project-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    /* Contact */
+    .contact {
+      background: #0c0c0c;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    /* Resume Section */
+    .resume {
+      background: linear-gradient(135deg, #4a90e2, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .resume h2 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .resume p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .glow-btn {
+      position: relative;
+      display: inline-block;
+      padding: 12px 40px;
+      font-size: 1.1rem;
+      color: white;
+      background: linear-gradient(90deg, #0078ff, #00c6ff);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.6);
+    }
+
+    .glow-btn::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+      transition: all 0.5s ease;
+    }
+
+    .glow-btn:hover::before {
+      left: 100%;
+    }
+
+    .glow-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px rgba(0,198,255,0.8);
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    /* Hero Image Animation */
+    .hero img {
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg bg-white fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Gaurav Sharma</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero d-flex align-items-center">
+  <div class="container" data-aos="zoom-in">
+    <div class="row align-items-center">
+      <!-- Text -->
+      <div class="col-md-6" data-aos="fade-right">
+        <h2>Hello, I'm <span class="text-warning">Gaurav Sharma</span></h2>
+        <p class="lead mb-4">A passionate Web Developer & AI Engineer creating impactful digital experiences.</p>
+        <a href="#projects" class="btn btn-light fw-semibold">View My Work</a>
+      </div>
+
+      <!-- Image -->
+      <div class="col-md-6 text-center" data-aos="fade-left">
+        <img src="C:\Users\Dell\Desktop\12.jpg" alt="Gaurav Sharma" class="img-fluid rounded-circle shadow-lg" style="max-width: 250px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">About Me</h2>
+    <div class="row align-items-center justify-content-center">
+      <div class="col-md-4 text-center" data-aos="fade-right">
+        <img src="C:\Users\Dell\Pictures\p.jpg" alt="Gaurav Sharma">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <p><strong>Aspiring Software Developer • AI & Machine Learning Enthusiast</strong></p>
+        <p>I’m a technology enthusiast passionate about developing intelligent systems and real-time web applications using Python, ML.</p>
+        <div>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">YOLOv5</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">HTML & CSS</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2 class="text-center mb-5" data-aos="fade-up">My Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card project-card">
+          <img src="C:\Users\Dell\Downloads\0928acb0-4210-4ef7-9005-2c03c679ac8b.jpg" class="card-img-top" alt="Resume Screening">
+          <div class="card-body">
+            <h5 class="card-title">AI-powered Resume Screening System</h5>
+            <p class="card-text">Developed an AI-based system to rank resumes using NLP and similarity matching.</p>
+            <a href="https://github.com/Gauravsharma-eng/ai-powered-resume-screen-system.git" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="flip-up">
+        <div class="card project-card">
+          <img src="C:\Users\Dell\Downloads\c87b2730-fb8c-4a18-a2df-1e9488eabb97.jpg" class="card-img-top" alt="Breast Cancer Detection">
+          <div class="card-body">
+            <h5 class="card-title">Breast Cancer Detection (YOLOv5)</h5>
+            <p class="card-text">Built a YOLOv5-based real-time tumor detection model integrated with Flask & Streamlit.</p>
+            <a href="https://github.com/Gauravsharma-eng/Breast-Cancer-Detection-System.git" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="flip-right">
+        <div class="card project-card">
+          <img src="C:\Users\Dell\Downloads\2c9fa3f8-1107-40f3-9991-3f79d6e1db66.jpg" class="card-img-top" alt="Travel Tracker">
+          <div class="card-body">
+            <h5 class="card-title">Travel Tracking Website</h5>
+            <p class="card-text">Developed an interactive web app using Leaflet.js to log trips & show dynamic places.</p>
+            <a href="https://github.com/Gauravsharma-eng/travel-Track.git" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME SECTION -->
+<section id="resume" class="resume">
+  <div class="container" data-aos="zoom-in">
+    <h2>My Resume</h2>
+    <p>Download my latest professional resume and explore my experience, education, and technical expertise.</p>
+    <a href="C:\Users\Dell\Downloads\gaurav_Resume12.pdf" download class="glow-btn">⬇️ Download Resume</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+    <h2>Get In Touch</h2>
+    <p>Let's collaborate! Reach out at <strong>gauravsharma27390@gmail.com</strong> or connect  https://linkedin.com/in/gaurav-sharma-aa584a257/via LinkedIn.</p>
+    <div class="d-flex justify-content-center flex-wrap gap-3">
+      <!-- Correct Email Link -->
+      <a href="mailto:gauravsharma27390@gmail.com" class="btn btn-outline-light">Email</a>
+
+      <!-- LinkedIn & GitHub Links -->
+      <a href="https://linkedin.com/in/gaurav-sharma-aa584a257/" target="https://linkedin.com/in/gaurav-sharma-aa584a257/" class="btn btn-outline-light">LinkedIn</a>
+      <a href="https://github.com/Gauravsharma-eng" target="_blank" class="btn btn-outline-light">GitHub</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Gaurav Sharma. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap & AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+</body>
+</html>
